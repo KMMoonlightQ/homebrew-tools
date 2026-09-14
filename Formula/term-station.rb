@@ -1,9 +1,9 @@
 class TermStation < Formula
   desc "Persistent terminal workspace with tabs and a draggable dashboard"
   homepage "https://github.com/KMMoonlightQ/term_station"
-  url "https://github.com/KMMoonlightQ/term_station/releases/download/v0.1.2/term-station-0.1.2-darwin-arm64.tar.gz"
-  version "0.1.2"
-  sha256 "f2ad6913ea830c316008974aba61c28f48fe152474f1e50da5a9b87908150adb"
+  url "https://github.com/KMMoonlightQ/term_station/releases/download/v0.1.3/term-station-0.1.3-darwin-arm64.tar.gz"
+  version "0.1.3"
+  sha256 "d4ca8bc2cf300090aa7029bb04178efdeeabd31485244d62b73e7f93c7eacc55"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma
