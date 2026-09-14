@@ -7,19 +7,19 @@ KMMoonlightQ 自用软件的 Homebrew 安装仓库。
 安装 [Homebrew](https://brew.sh/) 后，执行：
 
 ```sh
-brew install KMMoonlightQ/tools/git_workflow KMMoonlightQ/tools/term-station
+brew install KMMoonlightQ/tools/git-workflow KMMoonlightQ/tools/term-station
 ```
 
-安装后分别运行 `git_workflow` 或 `term-station`。git_workflow 首次使用 GitHub CLI 时，先运行一次 `gh auth login`；Homebrew 会自动安装它需要的 `gh` 依赖。
+安装后分别运行 `git-workflow` 或 `term-station`。git-workflow 首次使用 GitHub CLI 时，先运行一次 `gh auth login`；Homebrew 会自动安装它需要的 `gh` 依赖。
 
 ## 软件
 
 | 软件 | 命令 | 源码 | 平台 |
 | --- | --- | --- | --- |
-| git_workflow | `git_workflow` | [git_workflow](https://github.com/KMMoonlightQ/git_workflow) | macOS Apple Silicon（arm64） |
+| git-workflow | `git-workflow` | [git_workflow](https://github.com/KMMoonlightQ/git_workflow) | macOS Apple Silicon（arm64） |
 | Term Station | `term-station` | [term_station](https://github.com/KMMoonlightQ/term_station) | macOS 14+，Apple Silicon（arm64） |
 
-git_workflow 在终端中显示 GitHub PR Review 列表，复用本机 `gh` 登录。安装包内含 Bun 运行时和 OpenTUI 原生库，无需另装 Node.js 或 Bun。需要交互式终端；按 `q` 退出。
+git-workflow 在终端中显示 GitHub PR Review 列表，复用本机 `gh` 登录。安装包内含 Bun 运行时和 OpenTUI 原生库，无需另装 Node.js 或 Bun。需要交互式终端；按 `q` 退出。
 
 Term Station 提供多 Tab 和持久 Shell 会话，无需另装 Python。程序与依赖以目录形式一起安装，减少重复解包带来的启动等待。按 `Ctrl+B` 再按 `D` 保存并离开界面，后台会话继续运行；重新运行 `term-station` 即可接回。
 
@@ -27,7 +27,7 @@ Term Station 提供多 Tab 和持久 Shell 会话，无需另装 Python。程序
 
 ```sh
 brew update
-HOMEBREW_NO_INSTALL_CLEANUP=1 brew upgrade KMMoonlightQ/tools/git_workflow KMMoonlightQ/tools/term-station
+HOMEBREW_NO_INSTALL_CLEANUP=1 brew upgrade KMMoonlightQ/tools/git-workflow KMMoonlightQ/tools/term-station
 ```
 
 上述命令保留旧版本目录，供仍在运行的 Term Station 后台使用。旧后台会话结束后，再清理它使用的旧版本目录。
@@ -48,12 +48,16 @@ cd "$(brew --repository KMMoonlightQ/tools)"
 
 ## 从旧名称迁移
 
-`pr-review` 已改名为 `git_workflow`，本仓库包含 Homebrew 改名映射。更新后使用新命令：
+`pr-review` 和 `git_workflow` 均已改名为 `git-workflow`。本仓库包含 Homebrew 改名映射，更新时会迁移安装记录；仍保留 `git_workflow` 命令作为同一 Homebrew 安装的兼容入口。
 
 ```sh
 brew update
-brew install KMMoonlightQ/tools/git_workflow
-brew migrate KMMoonlightQ/tools/git_workflow
-brew upgrade KMMoonlightQ/tools/git_workflow
-git_workflow
+brew upgrade KMMoonlightQ/tools/git-workflow
+git-workflow
 ```
+
+如果 Homebrew 提示需手动迁移，可执行 `brew migrate git_workflow` 后再升级。
+
+## Term Station 后台升级
+
+鼠标转发需要新版界面和新版后台。升级软件后重新打开界面，仍会连接现有后台，以保留运行中的会话。保存工作后，执行 `term-station stop --yes` 再启动即可使用新版后台；该命令会结束当前工作空间的所有终端会话。使用另一个 `--state-dir` 可以先体验新版并保留原有会话。
