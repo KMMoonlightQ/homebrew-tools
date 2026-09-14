@@ -30,6 +30,12 @@ brew upgrade KMMoonlightQ/tools/pr-review
 
 ## 发布新版本
 
+维护安装规则时，进入 Homebrew 实际使用的仓库：
+
+```sh
+cd "$(brew --repository KMMoonlightQ/tools)"
+```
+
 1. 在软件源码仓库运行测试并构建，给确定的提交发布版本与安装包。
 2. 更新 `Formula/pr-review.rb` 中的版本、下载地址和 SHA256。
 3. 运行 `brew reinstall KMMoonlightQ/tools/pr-review` 和 `brew test KMMoonlightQ/tools/pr-review`，验证后提交并推送安装规则。
