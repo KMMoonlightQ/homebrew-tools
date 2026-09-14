@@ -49,5 +49,7 @@ cd "$(brew --repository KMMoonlightQ/tools)"
 ```sh
 brew update
 brew install KMMoonlightQ/tools/git_workflow
+brew migrate KMMoonlightQ/tools/git_workflow
+brew upgrade KMMoonlightQ/tools/git_workflow
 git_workflow
 ```
