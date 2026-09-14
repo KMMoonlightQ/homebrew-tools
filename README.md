@@ -21,14 +21,16 @@ brew install KMMoonlightQ/tools/git_workflow KMMoonlightQ/tools/term-station
 
 git_workflow 在终端中显示 GitHub PR Review 列表，复用本机 `gh` 登录。安装包内含 Bun 运行时和 OpenTUI 原生库，无需另装 Node.js 或 Bun。需要交互式终端；按 `q` 退出。
 
-Term Station 提供多 Tab 和持久 Shell 会话，无需另装 Python。按 `Ctrl+B` 再按 `D` 保存并离开界面，后台会话继续运行；重新运行 `term-station` 即可接回。
+Term Station 提供多 Tab 和持久 Shell 会话，无需另装 Python。程序与依赖以目录形式一起安装，减少重复解包带来的启动等待。按 `Ctrl+B` 再按 `D` 保存并离开界面，后台会话继续运行；重新运行 `term-station` 即可接回。
 
 ## 更新
 
 ```sh
 brew update
-brew upgrade KMMoonlightQ/tools/git_workflow KMMoonlightQ/tools/term-station
+HOMEBREW_NO_INSTALL_CLEANUP=1 brew upgrade KMMoonlightQ/tools/git_workflow KMMoonlightQ/tools/term-station
 ```
+
+上述命令保留旧版本目录，供仍在运行的 Term Station 后台使用。旧后台会话结束后，再清理它使用的旧版本目录。
 
 ## 发布新版本
 

@@ -1,9 +1,9 @@
 class GitWorkflow < Formula
   desc "Terminal interface for your GitHub pull request reviews"
   homepage "https://github.com/KMMoonlightQ/git_workflow"
-  url "https://github.com/KMMoonlightQ/git_workflow/releases/download/v0.1.1/git_workflow-0.1.1-darwin-arm64.tar.gz"
-  version "0.1.1"
-  sha256 "54c285082ef11ac92a1c0ec780e4a6e57e258b117e0666da70b49bed607c3d31"
+  url "https://github.com/KMMoonlightQ/git_workflow/releases/download/v0.1.2/git_workflow-0.1.2-darwin-arm64.tar.gz"
+  version "0.1.2"
+  sha256 "2a28f7136d2e5d63bb60c7041cd8d7bc40580e94f5629e252c1b7dae2bf0d2ce"
 
   depends_on arch: :arm64
   depends_on macos: :ventura
