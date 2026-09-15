@@ -18,10 +18,26 @@ brew install KMMoonlightQ/tools/git-workflow KMMoonlightQ/tools/term-station
 | --- | --- | --- | --- |
 | git-workflow | `git-workflow` | [git_workflow](https://github.com/KMMoonlightQ/git_workflow) | macOS Apple Silicon（arm64） |
 | Term Station | `term-station` | [term_station](https://github.com/KMMoonlightQ/term_station) | macOS 14+，Apple Silicon（arm64） |
+| xyz-tui | `xyz` | [xyz_tui](https://github.com/KMMoonlight/xyz_tui)（私有） | macOS 14+，Apple Silicon（arm64） |
 
 git-workflow 在终端中显示 GitHub PR Review 列表，复用本机 `gh` 登录。安装包内含 Bun 运行时和 OpenTUI 原生库，无需另装 Node.js 或 Bun。需要交互式终端；按 `q` 退出。
 
 Term Station 提供多 Tab 和持久 Shell 会话，无需另装 Python。程序与依赖以目录形式一起安装，减少重复解包带来的启动等待。按 `Ctrl+B` 再按 `D` 保存并离开界面，后台会话继续运行；重新运行 `term-station` 即可接回。
+
+## 安装 xyz-tui
+
+xyz-tui 是小宇宙播客终端客户端。源码和安装包保持私有，Homebrew 通过 GitHub CLI 下载；登录账号需要有 `KMMoonlight/xyz_tui` 的读取权限。已有可用的 `gh` 登录时，无需重复登录。
+
+```sh
+brew install gh
+gh auth login
+brew install KMMoonlightQ/tools/xyz-tui
+xyz
+```
+
+Homebrew 自动安装播放依赖 `mpv`，无需 Rust。安装后使用 `xyz` 启动，再用小宇宙 App 扫码登录；按 `?` 查看快捷键，按 `q` 退出。查看版本使用 `xyz --version`，`xyz-tui` 也保留为兼容入口。
+
+更新使用 `brew update` 和 `brew upgrade KMMoonlightQ/tools/xyz-tui`。GitHub 凭据由 `gh` 管理，tap 中不保存令牌，也不公开私有安装包。
 
 ## 更新
 
