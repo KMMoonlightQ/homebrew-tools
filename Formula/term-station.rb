@@ -1,9 +1,9 @@
 class TermStation < Formula
   desc "Persistent terminal workspace with tabs and a draggable dashboard"
   homepage "https://github.com/KMMoonlightQ/term_station"
-  url "https://github.com/KMMoonlightQ/term_station/releases/download/v0.1.3/term-station-0.1.3-darwin-arm64.tar.gz"
-  version "0.1.3"
-  sha256 "d4ca8bc2cf300090aa7029bb04178efdeeabd31485244d62b73e7f93c7eacc55"
+  url "https://github.com/KMMoonlightQ/term_station/releases/download/v0.1.4/term-station-0.1.4-darwin-arm64.tar.gz"
+  version "0.1.4"
+  sha256 "2add09fee2e0023f6d7e72b776709953e25cea5f30c47d13684a19256778ddea"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma
@@ -22,8 +22,10 @@ class TermStation < Formula
       When upgrading with detached sessions running, keep their old runtime:
         HOMEBREW_NO_INSTALL_CLEANUP=1 brew upgrade KMMoonlightQ/tools/term-station
       Run cleanup only after sessions using older versions have ended.
-      Application mouse forwarding requires a new daemon. Save your work before
-      stopping the old daemon: `term-station stop --yes` ends all its shell sessions.
+      The wide-character alignment fix requires a new daemon. Existing sessions
+      keep their current daemon. Save your work before stopping it:
+        term-station stop --yes
+      This ends all shell sessions in that workspace.
       Then start `term-station` again, or use a separate --state-dir to try it safely.
     EOS
   end
