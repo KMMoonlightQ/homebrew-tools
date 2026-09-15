@@ -3,10 +3,10 @@ require_relative "../lib/github_cli_release_download_strategy"
 class XyzTui < Formula
   desc "Terminal client for Xiaoyuzhou podcasts"
   homepage "https://github.com/KMMoonlight/xyz_tui"
-  url "https://github.com/KMMoonlight/xyz_tui/releases/download/v0.1.0/xyz-tui-0.1.0-darwin-arm64.tar.gz",
+  url "https://github.com/KMMoonlight/xyz_tui/releases/download/v0.1.1/xyz-tui-0.1.1-darwin-arm64.tar.gz",
       using: KmmGitHubReleaseDownloadStrategy
-  version "0.1.0"
-  sha256 "a625fcfbe1c7a862b705b71097aac020ed410bda1f096366fa81043a9f17c801"
+  version "0.1.1"
+  sha256 "d4d3cd39a839b4cd22df30b8c2bf286db7498608110bcdb35f58d19ad91def4b"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma
