@@ -2,15 +2,17 @@
 
 KMMoonlightQ 软件的 Homebrew 安装仓库。
 
+所有软件的源码和安装包均已公开，安装无需 GitHub 登录或仓库授权。
+
 ## 安装
 
 安装 [Homebrew](https://brew.sh/) 后，执行：
 
 ```sh
-brew install KMMoonlightQ/tools/git-workflow KMMoonlightQ/tools/term-station
+brew install KMMoonlightQ/tools/git-workflow KMMoonlightQ/tools/term-station KMMoonlightQ/tools/xyz-tui KMMoonlightQ/tools/book
 ```
 
-安装后分别运行 `git-workflow` 或 `term-station`。git-workflow 首次使用 GitHub CLI 时，先运行一次 `gh auth login`；Homebrew 会自动安装它需要的 `gh` 依赖。
+也可以只安装需要的软件。安装后分别运行 `git-workflow`、`term-station`、`xyz` 或 `book`。git-workflow 查询你的 GitHub PR 时仍需先执行 `gh auth login`；这是使用其功能的要求，安装包本身可匿名下载。Homebrew 会自动安装它需要的 `gh` 依赖。
 
 ## 软件
 
@@ -18,7 +20,7 @@ brew install KMMoonlightQ/tools/git-workflow KMMoonlightQ/tools/term-station
 | --- | --- | --- | --- |
 | git-workflow | `git-workflow` | [git_workflow](https://github.com/KMMoonlightQ/git_workflow) | macOS Apple Silicon（arm64） |
 | Term Station | `term-station` | [term_station](https://github.com/KMMoonlightQ/term_station) | macOS 14+，Apple Silicon（arm64） |
-| xyz-tui | `xyz` | [xyz_tui](https://github.com/KMMoonlight/xyz_tui)（私有） | macOS 14+，Apple Silicon（arm64） |
+| xyz-tui | `xyz` | [xyz_tui](https://github.com/KMMoonlight/xyz_tui) | macOS 14+，Apple Silicon（arm64） |
 | book | `book` | [book](https://github.com/KMMoonlightQ/book) | macOS 14+，Apple Silicon（arm64） |
 
 git-workflow 在终端中显示 GitHub PR Review 列表，复用本机 `gh` 登录。安装包内含 Bun 运行时和 OpenTUI 原生库，无需另装 Node.js 或 Bun。需要交互式终端；按 `q` 退出。
@@ -27,18 +29,16 @@ Term Station 提供多 Tab 和持久 Shell 会话，无需另装 Python。程序
 
 ## 安装 xyz-tui
 
-xyz-tui 是小宇宙播客终端客户端。源码和安装包保持私有，Homebrew 通过 GitHub CLI 下载；登录账号需要有 `KMMoonlight/xyz_tui` 的读取权限。已有可用的 `gh` 登录时，无需重复登录。
+xyz-tui 是小宇宙播客终端客户端。源码和安装包均已公开，安装无需 GitHub 登录或仓库授权。
 
 ```sh
-brew install gh
-gh auth login
 brew install KMMoonlightQ/tools/xyz-tui
 xyz
 ```
 
 Homebrew 自动安装播放依赖 `mpv`，无需 Rust。安装后使用 `xyz` 启动，再用小宇宙 App 扫码登录；按 `?` 查看快捷键，按 `q` 退出。查看版本使用 `xyz --version`，`xyz-tui` 也保留为兼容入口。
 
-更新使用 `brew update` 和 `brew upgrade KMMoonlightQ/tools/xyz-tui`。GitHub 凭据由 `gh` 管理，tap 中不保存令牌，也不公开私有安装包。
+更新使用 `brew update` 和 `brew upgrade KMMoonlightQ/tools/xyz-tui`。
 
 ## 安装 book
 
@@ -57,7 +57,7 @@ book
 
 ```sh
 brew update
-HOMEBREW_NO_INSTALL_CLEANUP=1 brew upgrade KMMoonlightQ/tools/git-workflow KMMoonlightQ/tools/term-station
+HOMEBREW_NO_INSTALL_CLEANUP=1 brew upgrade KMMoonlightQ/tools/git-workflow KMMoonlightQ/tools/term-station KMMoonlightQ/tools/xyz-tui KMMoonlightQ/tools/book
 ```
 
 上述命令保留旧版本目录，供仍在运行的 Term Station 后台使用。旧后台会话结束后，再清理它使用的旧版本目录。

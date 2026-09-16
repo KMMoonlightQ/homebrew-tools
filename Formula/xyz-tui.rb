@@ -1,21 +1,13 @@
-require_relative "../lib/github_cli_release_download_strategy"
-
 class XyzTui < Formula
   desc "Terminal client for Xiaoyuzhou podcasts"
   homepage "https://github.com/KMMoonlight/xyz_tui"
-  url "https://github.com/KMMoonlight/xyz_tui/releases/download/v0.1.1/xyz-tui-0.1.1-darwin-arm64.tar.gz",
-      using: KmmGitHubReleaseDownloadStrategy
+  url "https://github.com/KMMoonlight/xyz_tui/releases/download/v0.1.1/xyz-tui-0.1.1-darwin-arm64.tar.gz"
   version "0.1.1"
   sha256 "d4d3cd39a839b4cd22df30b8c2bf286db7498608110bcdb35f58d19ad91def4b"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma
-  depends_on "gh"
   depends_on "mpv"
-
-  livecheck do
-    skip "Private GitHub repository"
-  end
 
   def install
     bin.install "xyz-tui" => "xyz"
@@ -25,8 +17,6 @@ class XyzTui < Formula
 
   def caveats
     <<~EOS
-      Private release downloads use `gh auth login`; your account needs access to
-      KMMoonlight/xyz_tui. No GitHub token is stored in this tap.
       Run `xyz`, then scan its QR code with the Xiaoyuzhou mobile app.
       Press ? for shortcuts, or q to quit. Playback uses the installed mpv.
       Login data is stored in ~/Library/Application Support/xyz-tui/.
