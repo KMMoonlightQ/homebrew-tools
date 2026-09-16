@@ -1,6 +1,6 @@
 # Homebrew Tools
 
-KMMoonlightQ 自用软件的 Homebrew 安装仓库。
+KMMoonlightQ 软件的 Homebrew 安装仓库。
 
 ## 安装
 
@@ -19,7 +19,7 @@ brew install KMMoonlightQ/tools/git-workflow KMMoonlightQ/tools/term-station
 | git-workflow | `git-workflow` | [git_workflow](https://github.com/KMMoonlightQ/git_workflow) | macOS Apple Silicon（arm64） |
 | Term Station | `term-station` | [term_station](https://github.com/KMMoonlightQ/term_station) | macOS 14+，Apple Silicon（arm64） |
 | xyz-tui | `xyz` | [xyz_tui](https://github.com/KMMoonlight/xyz_tui)（私有） | macOS 14+，Apple Silicon（arm64） |
-| book | `book` | [book](https://github.com/KMMoonlightQ/book)（私有） | macOS 14+，Apple Silicon（arm64） |
+| book | `book` | [book](https://github.com/KMMoonlightQ/book) | macOS 14+，Apple Silicon（arm64） |
 
 git-workflow 在终端中显示 GitHub PR Review 列表，复用本机 `gh` 登录。安装包内含 Bun 运行时和 OpenTUI 原生库，无需另装 Node.js 或 Bun。需要交互式终端；按 `q` 退出。
 
@@ -42,11 +42,9 @@ Homebrew 自动安装播放依赖 `mpv`，无需 Rust。安装后使用 `xyz` �
 
 ## 安装 book
 
-book 是本地电子书终端阅读器，支持 TXT、EPUB 和未加密的 PalmDOC MOBI。安装包包含编译后的程序，无需 Rust。源码和安装包位于私有仓库，`gh` 登录账号需要有 `KMMoonlightQ/book` 的访问权限。
+book 是本地电子书终端阅读器，支持 TXT、EPUB 和未加密的 PalmDOC MOBI。源码和安装包均已公开，无需 Rust、GitHub 登录或仓库授权即可安装。
 
 ```sh
-brew install gh
-gh auth login
 brew install KMMoonlightQ/tools/book
 book
 ```
