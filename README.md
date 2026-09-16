@@ -51,7 +51,7 @@ book
 
 首次启动生成 `~/.config/book.toml` 和 `~/books`，然后退出。将书籍放入 `~/books`，或修改配置中的 `library_dir`，再次运行 `book`。已有配置会继续保留。
 
-书架中按 ↑/↓ 或 j/k 选择，Enter 打开；阅读时按 ←/→ 或 p/n 翻页，Esc 保存进度并返回书架，再按 q 退出。更新使用 `brew update` 和 `brew upgrade KMMoonlightQ/tools/book`。
+书架中按 ↑/↓ 或 j/k 选择，Enter 打开；阅读时按 ←/→ 或 p/n 翻页，按 i 打开章节目录，Esc 保存进度并返回书架，再按 q 退出。阅读页底部显示当前章节进度。更新使用 `brew update` 和 `brew upgrade KMMoonlightQ/tools/book`。
 
 ## 更新
 

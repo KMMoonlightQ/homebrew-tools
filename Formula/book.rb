@@ -1,9 +1,9 @@
 class Book < Formula
   desc "Terminal ebook reader for TXT, EPUB and MOBI"
   homepage "https://github.com/KMMoonlightQ/book"
-  url "https://github.com/KMMoonlightQ/book/releases/download/v0.1.0/book-0.1.0-darwin-arm64.tar.gz"
-  version "0.1.0"
-  sha256 "710e5b9951f0dafe6738d9b8eadcef8dbd6e1725f577d87f813e9bd82b86ad4b"
+  url "https://github.com/KMMoonlightQ/book/releases/download/v0.1.1/book-0.1.1-darwin-arm64.tar.gz"
+  version "0.1.1"
+  sha256 "64fb4eef039bd12e529bd2856b2ba07ce0a11297919531977ba52ea11440d682"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma
@@ -18,6 +18,7 @@ class Book < Formula
       Run `book` in an interactive terminal. The first launch creates
       ~/.config/book.toml and ~/books, then exits with setup instructions.
       Add books to ~/books, or edit library_dir in the config, then run book again.
+      Press i while reading to select a chapter.
       Press Esc to save reading progress and return to the library, then q to quit.
       Reading progress is stored in ~/.config/book-progress.toml.
       BOOK_CONFIG_DIR can select a separate config and progress directory.
