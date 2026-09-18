@@ -1,9 +1,9 @@
 class TermStation < Formula
   desc "Persistent terminal workspace with tabs and a draggable dashboard"
   homepage "https://github.com/KMMoonlightQ/term_station"
-  url "https://github.com/KMMoonlightQ/term_station/releases/download/v0.1.7/term-station-0.1.7-darwin-arm64.tar.gz"
-  version "0.1.7"
-  sha256 "d5449a04bb0e9a370895ebac87b7acbb2cb07d4f8ddf17c2a7af42a48f04d0c4"
+  url "https://github.com/KMMoonlightQ/term_station/releases/download/v0.1.8/term-station-0.1.8-darwin-arm64.tar.gz"
+  version "0.1.8"
+  sha256 "57087f6d020dbab8bc95c95affed553994c224692e95adb1e086e911e456619a"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma
@@ -23,8 +23,8 @@ class TermStation < Formula
         HOMEBREW_NO_INSTALL_CLEANUP=1 brew upgrade KMMoonlightQ/tools/term-station
       Run cleanup only after sessions using older versions have ended.
       UI updates apply after you detach and reopen; sessions keep running.
-      The mouse-wheel fix in 0.1.7 requires a new daemon. Existing sessions
-      keep their current daemon. Save your work before stopping it:
+      If your daemon predates 0.1.7, its mouse-wheel fix requires a restart.
+      Existing sessions keep their current daemon. Save work before stopping it:
         term-station stop --yes
       This ends all shell sessions in that workspace.
       Then start `term-station` again, or use a separate --state-dir to try it safely.
