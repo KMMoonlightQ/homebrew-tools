@@ -1,9 +1,9 @@
 class Koala < Formula
   desc "Extensible terminal AI agent"
   homepage "https://github.com/KMMoonlightQ/koala"
-  url "https://github.com/KMMoonlightQ/koala/releases/download/v0.1.0/koala-0.1.0-darwin-arm64.tar.gz"
-  version "0.1.0"
-  sha256 "0bd09f4bebb214b6437e0298dc988db4cd9728983f21d017f0b446e43c85ab2a"
+  url "https://github.com/KMMoonlightQ/koala/releases/download/v0.1.1/koala-0.1.1-darwin-arm64.tar.gz"
+  version "0.1.1"
+  sha256 "aaab4cebe3670964f0a02e5e07c4513bc92d86eab2122f50c22b8a06c364eb10"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma
@@ -17,10 +17,8 @@ class Koala < Formula
   def caveats
     <<~EOS
       Run `koala` to open the interactive terminal app.
-      Configure your provider before sending a message:
-        mkdir -p ~/.koala
-        cp -n #{share}/koala/config.example.toml ~/.koala/config.toml
-      Edit [llm] base_url, api_key and model in ~/.koala/config.toml.
+      On first launch, follow the connection setup form and press Ctrl+S to save.
+      Configuration is stored in ~/.koala/config.toml.
       Existing config and sessions are preserved during upgrades.
       Use /quit to exit, or Ctrl+D with an empty input in the main view.
     EOS

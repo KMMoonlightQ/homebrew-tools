@@ -63,9 +63,7 @@ brew install KMMoonlightQ/tools/koala
 koala
 ```
 
-使用模型前，将 `$(brew --prefix koala)/share/koala/config.example.toml` 复制到
-`~/.koala/config.toml`（已有文件请保留），填写 `[llm]` 的 `base_url`、`api_key`、`model`。
-输入 `/quit` 退出；升级保留已有配置和会话。
+首次运行会自动创建 `~/.koala/config.toml`，在界面中填写服务地址、API Key 和模型名，按 Ctrl+S 保存。已有完整配置会直接进入对话。输入 `/quit` 退出；升级保留配置和会话。
 
 ## 更新
 
