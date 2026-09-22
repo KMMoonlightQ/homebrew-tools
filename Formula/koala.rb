@@ -1,9 +1,9 @@
 class Koala < Formula
   desc "Extensible terminal AI agent"
   homepage "https://github.com/KMMoonlightQ/koala"
-  url "https://github.com/KMMoonlightQ/koala/releases/download/v0.1.1/koala-0.1.1-darwin-arm64.tar.gz"
-  version "0.1.1"
-  sha256 "aaab4cebe3670964f0a02e5e07c4513bc92d86eab2122f50c22b8a06c364eb10"
+  url "https://github.com/KMMoonlightQ/koala/releases/download/v0.1.2/koala-0.1.2-darwin-arm64.tar.gz"
+  version "0.1.2"
+  sha256 "1be574dce308a9208c189813dce583ced4d50e26cc36a45e8978970fda9b3f08"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma
@@ -20,6 +20,8 @@ class Koala < Formula
       On first launch, follow the connection setup form and press Ctrl+S to save.
       Configuration is stored in ~/.koala/config.toml.
       Existing config and sessions are preserved during upgrades.
+      If an old config uses agent.compact_threshold = 40000, change it to 75.
+      compact_threshold now accepts percentages from 1 to 100.
       Use /quit to exit, or Ctrl+D with an empty input in the main view.
     EOS
   end
