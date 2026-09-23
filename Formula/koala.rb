@@ -1,9 +1,9 @@
 class Koala < Formula
   desc "Extensible terminal AI agent"
   homepage "https://github.com/KMMoonlightQ/koala"
-  url "https://github.com/KMMoonlightQ/koala/releases/download/v0.1.2/koala-0.1.2-darwin-arm64.tar.gz"
-  version "0.1.2"
-  sha256 "1be574dce308a9208c189813dce583ced4d50e26cc36a45e8978970fda9b3f08"
+  url "https://github.com/KMMoonlightQ/koala/releases/download/v0.1.3/koala-0.1.3-darwin-arm64.tar.gz"
+  version "0.1.3"
+  sha256 "864a8d8b0446c4ffb9a6525685f9ed39a2a21c51eef58288e02d419c1d47314f"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma
